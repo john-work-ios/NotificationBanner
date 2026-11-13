@@ -519,7 +519,7 @@ open class BaseNotificationBanner: UIView {
             return 0
         }
 
-        return UIApplication.shared.statusBarFrame.height
+        return UIApplication.shared.firstKeyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0 // UIApplication.statusBarFrame is empty on iOS 27
     }
 
     /**
